@@ -9,6 +9,8 @@ import {
   AsyncStorage
 } from "react-native";
 import { Container, Text } from "native-base";
+import CreateScreen from "./containers/CreateEvent";
+import AdminHomePage from "./containers/AdminHomePage";
 
 import DrawerNavigator from "./managers/DrawerNavigator";
 import {
@@ -17,10 +19,17 @@ import {
   createStackNavigator
 } from "react-navigation";
 import Login from "./components/Login";
+import CreateEvent from "./containers/CreateEvent";
 
 const root = createSwitchNavigator({
   Login: {
     screen: Login
+  },
+  Admin: {
+    screen: AdminHomePage
+  },
+  CreateEvent: {
+    screen: CreateEvent
   },
   default: DrawerNavigator
 });
@@ -59,7 +68,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <Application />
+        <Test />
       </View>
     );
   }
